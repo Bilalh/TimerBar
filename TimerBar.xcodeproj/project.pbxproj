@@ -10,7 +10,6 @@
 		92A93E7417EE57E3003FBAA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A93E7317EE57E3003FBAA7 /* Cocoa.framework */; };
 		92A93E7E17EE57E3003FBAA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E7C17EE57E3003FBAA7 /* InfoPlist.strings */; };
 		92A93E8017EE57E3003FBAA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E7F17EE57E3003FBAA7 /* main.m */; };
-		92A93E8417EE57E3003FBAA7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E8217EE57E3003FBAA7 /* Credits.rtf */; };
 		92A93E8717EE57E3003FBAA7 /* TimerBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E8617EE57E3003FBAA7 /* TimerBarAppDelegate.m */; };
 		92A93E8A17EE57E3003FBAA7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E8817EE57E3003FBAA7 /* MainMenu.xib */; };
 		92A93E8C17EE57E3003FBAA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E8B17EE57E3003FBAA7 /* Images.xcassets */; };
@@ -40,7 +39,6 @@
 		92A93E7D17EE57E3003FBAA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92A93E7F17EE57E3003FBAA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		92A93E8117EE57E3003FBAA7 /* TimerBar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimerBar-Prefix.pch"; sourceTree = "<group>"; };
-		92A93E8317EE57E3003FBAA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		92A93E8517EE57E3003FBAA7 /* TimerBarAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerBarAppDelegate.h; sourceTree = "<group>"; };
 		92A93E8617EE57E3003FBAA7 /* TimerBarAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerBarAppDelegate.m; sourceTree = "<group>"; };
 		92A93E8917EE57E3003FBAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -50,6 +48,8 @@
 		92A93E9917EE57E3003FBAA7 /* TimerBarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimerBarTests-Info.plist"; sourceTree = "<group>"; };
 		92A93E9B17EE57E3003FBAA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92A93E9D17EE57E3003FBAA7 /* TimerBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerBarTests.m; sourceTree = "<group>"; };
+		92A93EA717EE60DD003FBAA7 /* timer.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = timer.svg; sourceTree = "<group>"; };
+		92E20F3017EE688B00849A7E /* timerIcon.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = timerIcon.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +127,12 @@
 		92A93E7A17EE57E3003FBAA7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92E20F3017EE688B00849A7E /* timerIcon.svg */,
+				92A93EA717EE60DD003FBAA7 /* timer.svg */,
 				92A93E7B17EE57E3003FBAA7 /* TimerBar-Info.plist */,
 				92A93E7C17EE57E3003FBAA7 /* InfoPlist.strings */,
 				92A93E7F17EE57E3003FBAA7 /* main.m */,
 				92A93E8117EE57E3003FBAA7 /* TimerBar-Prefix.pch */,
-				92A93E8217EE57E3003FBAA7 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,7 +234,6 @@
 			files = (
 				92A93E7E17EE57E3003FBAA7 /* InfoPlist.strings in Resources */,
 				92A93E8C17EE57E3003FBAA7 /* Images.xcassets in Resources */,
-				92A93E8417EE57E3003FBAA7 /* Credits.rtf in Resources */,
 				92A93E8A17EE57E3003FBAA7 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,14 +283,6 @@
 				92A93E7D17EE57E3003FBAA7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		92A93E8217EE57E3003FBAA7 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92A93E8317EE57E3003FBAA7 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		92A93E8817EE57E3003FBAA7 /* MainMenu.xib */ = {
@@ -465,6 +457,7 @@
 				92A93EA317EE57E3003FBAA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92A93EA417EE57E3003FBAA7 /* Build configuration list for PBXNativeTarget "TimerBarTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +466,7 @@
 				92A93EA617EE57E3003FBAA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

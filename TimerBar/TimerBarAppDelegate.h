@@ -10,6 +10,8 @@
 
 @interface TimerBarAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
+@property (retain) IBOutlet NSWindow *window;
+@property (retain) IBOutlet NSStatusItem *statusItem;
+@property (retain) IBOutlet NSMenu *menu;
 
 @end
