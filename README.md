@@ -1,7 +1,7 @@
 
 TimerBar
 =========
-A timer in your menubar. Also allows use to set a global hotkey to start/pause and stop the timer.
+A timer in your menubar. Also allows you to set a global hotkey to start/pause and stop the timer.
 
 
 
