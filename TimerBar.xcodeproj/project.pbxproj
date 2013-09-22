@@ -142,6 +142,7 @@
 		921C890A17EE8554003ECB0A /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		921C890B17EE8554003ECB0A /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
 		92320A3D17EE9791007F3892 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
+		92320A4017EEA696007F3892 /* TimerBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerBar.entitlements; sourceTree = "<group>"; };
 		92A93E7017EE57E3003FBAA7 /* TimerBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A93E7317EE57E3003FBAA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92A93E7617EE57E3003FBAA7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -343,6 +344,7 @@
 		92A93E7917EE57E3003FBAA7 /* TimerBar */ = {
 			isa = PBXGroup;
 			children = (
+				92320A4017EEA696007F3892 /* TimerBar.entitlements */,
 				921C890317EE84F6003ECB0A /* Prefs */,
 				92A93E8517EE57E3003FBAA7 /* TimerBarAppDelegate.h */,
 				92A93E8617EE57E3003FBAA7 /* TimerBarAppDelegate.m */,
@@ -441,6 +443,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Bilal Syed Hussain";
 				TargetAttributes = {
+					92A93E6F17EE57E3003FBAA7 = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					92A93E9017EE57E3003FBAA7 = {
 						TestTargetID = 92A93E6F17EE57E3003FBAA7;
 					};
@@ -695,6 +704,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TimerBar/TimerBar.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TimerBar/TimerBar-Prefix.pch";
@@ -708,6 +719,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TimerBar/TimerBar.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TimerBar/TimerBar-Prefix.pch";
