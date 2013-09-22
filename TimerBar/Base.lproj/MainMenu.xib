@@ -24,7 +24,9 @@
         </window>
         <customObject id="494" customClass="TimerBarAppDelegate">
             <connections>
+                <outlet property="endItem" destination="H1h-RH-cXe" id="hI5-vM-Cbn"/>
                 <outlet property="menu" destination="oJg-7A-AzG" id="M4c-b6-mo5"/>
+                <outlet property="startStopItem" destination="zOG-PB-sUH" id="tsd-Zf-a3O"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
@@ -33,8 +35,11 @@
             <items>
                 <menuItem title="Start" id="zOG-PB-sUH">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="startStop:" target="494" id="Pot-wg-UNf"/>
+                    </connections>
                 </menuItem>
-                <menuItem title="Reset" id="H1h-RH-cXe">
+                <menuItem title="End" id="H1h-RH-cXe">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="1Cy-8j-OMW">
