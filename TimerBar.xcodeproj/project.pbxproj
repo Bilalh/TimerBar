@@ -50,6 +50,8 @@
 		92A93E9D17EE57E3003FBAA7 /* TimerBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerBarTests.m; sourceTree = "<group>"; };
 		92A93EA717EE60DD003FBAA7 /* timer.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = timer.svg; sourceTree = "<group>"; };
 		92E20F3017EE688B00849A7E /* timerIcon.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = timerIcon.svg; sourceTree = "<group>"; };
+		92E20F3117EE7BA700849A7E /* LICENCE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
+		92E20F3217EE7C3300849A7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +78,12 @@
 		92A93E6717EE57E3003FBAA7 = {
 			isa = PBXGroup;
 			children = (
+				92E20F3217EE7C3300849A7E /* README.md */,
 				92A93E7917EE57E3003FBAA7 /* TimerBar */,
 				92A93E9717EE57E3003FBAA7 /* TimerBarTests */,
 				92A93E7217EE57E3003FBAA7 /* Frameworks */,
 				92A93E7117EE57E3003FBAA7 /* Products */,
+				92E20F3117EE7BA700849A7E /* LICENCE */,
 			);
 			sourceTree = "<group>";
 		};
