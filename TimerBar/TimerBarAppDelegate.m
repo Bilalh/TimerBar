@@ -9,6 +9,7 @@
 #import "TimerBarAppDelegate.h"
 #import "PreferencesController.h"
 #import <PTHotKey/PTHotKeyCenter.h>
+#import <PTHotKey/PTKeyCodeTranslator.h>
 #import <PTHotKey/PTHotKey+ShortcutRecorder.h>
 
 
@@ -25,9 +26,10 @@ static NSImage *icon;
 
 + (void) initialize{
    icon  = [NSImage imageNamed:@"Timer"];
-   [[NSUserDefaults standardUserDefaults] registerDefaults:
-        [NSDictionary dictionaryWithContentsOfFile:
-         [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]]];
+   NSDictionary *d = [NSDictionary dictionaryWithContentsOfFile:
+     [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]];
+   [[NSUserDefaults standardUserDefaults] registerDefaults:d];
+     [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:d];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -158,23 +160,27 @@ static NSImage *icon;
 - (void)updateHotkeys
 {
  
-    void (^updateKeybinding)(NSString*,SEL) = ^(NSString *key,SEL sel){
+    void (^updateKeybinding)(NSString*,SEL,NSMenuItem*) = ^(NSString *key,SEL sel,NSMenuItem *item){
         PTHotKeyCenter *hotKeyCenter = [PTHotKeyCenter sharedCenter];
         PTHotKey *oldHotKey          = [hotKeyCenter hotKeyWithIdentifier:key];
         [hotKeyCenter unregisterHotKey:oldHotKey];
         
+        NSDictionary *d = [[NSUserDefaults standardUserDefaults] valueForKey:key];
         PTHotKey *newHotKey = [PTHotKey hotKeyWithIdentifier:key
-                                                    keyCombo:[[NSUserDefaults standardUserDefaults] valueForKey:key]
+                                                    keyCombo:d
                                                       target:self
                                                       action:sel];
         [hotKeyCenter registerHotKey:newHotKey];
         
+        [item setKeyEquivalentModifierMask: [d[@"modifierFlags"] unsignedIntegerValue]];
+        [item setKeyEquivalent: [[PTKeyCodeTranslator currentTranslator]
+                                 translateKeyCode:[d[@"keyCode"] integerValue]] ];
+        
 	};
     
-    updateKeybinding(@"hotkeys.startPause",@selector(startStop));
-    updateKeybinding(@"hotkeys.end",@selector(end));
+    updateKeybinding(@"hotkeys.startPause",@selector(startStop),startStopItem);
+    updateKeybinding(@"hotkeys.end",@selector(end),endItem);
 
-    
 }
 
 @end
