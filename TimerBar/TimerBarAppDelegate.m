@@ -30,8 +30,8 @@ static NSImage *icon;
     
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     
-    self.statusItem = [statusBar statusItemWithLength:24];
-    [statusItem setTitle:@"T"];
+    self.statusItem = [statusBar statusItemWithLength:47];
+    [statusItem setTitle:@""];
     [statusItem setImage:icon];
     [statusItem setHighlightMode:YES];
     [statusItem setMenu:menu];
@@ -45,9 +45,10 @@ static NSImage *icon;
 {
     if (on){
         [timer invalidate];
-        [self setTime];
+        [self updateTime];
         
         [startStopItem setTitle: NSLocalizedString(@"Resume",nil)];
+        [endItem setEnabled:NO];
         
     }else{
         timerThread = [[NSThread alloc]
@@ -55,16 +56,27 @@ static NSImage *icon;
                        selector:@selector(startTimer)
                        object:nil];
         [timerThread start];
-        [self setTime];
+        [self updateTime];
         
 
         [statusItem setImage:Nil];
         [startStopItem setTitle: NSLocalizedString(@"Pause",nil)];
+        [endItem setEnabled:YES];
     }
     
-    on = ! on;
+    on = !on;
 }
 
+- (IBAction)end:(id)sender
+{
+    [timer invalidate];
+    seconds = 0;
+    
+    [statusItem setTitle:@""];
+    [statusItem setImage:icon];
+    [endItem setEnabled:NO];
+    
+}
 
 #pragma mark timer
 
@@ -85,20 +97,15 @@ static NSImage *icon;
     }
 }
 
-- (void)setTime
+- (void)updateTime
 {
-    
-    if ([statusItem length] != 47.0){
-        [statusItem setLength:47.0];
-    }
-    
     [statusItem setTitle:[NSString stringWithFormat:@"%02zd:%02zd", seconds / 60, seconds % 60]];
 }
 
 - (void)tick
 {
     self.seconds++;
-    [self setTime];
+    [self updateTime];
 }
 
 

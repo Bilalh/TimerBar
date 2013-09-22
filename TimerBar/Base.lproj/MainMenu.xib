@@ -39,8 +39,11 @@
                         <action selector="startStop:" target="494" id="Pot-wg-UNf"/>
                     </connections>
                 </menuItem>
-                <menuItem title="End" id="H1h-RH-cXe">
+                <menuItem title="End" enabled="NO" id="H1h-RH-cXe">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="end:" target="494" id="WOL-T1-Ify"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="1Cy-8j-OMW">
                     <modifierMask key="keyEquivalentModifierMask" command="YES"/>
