@@ -384,13 +384,13 @@
 			isa = PBXGroup;
 			children = (
 				92320A4017EEA696007F3892 /* TimerBar.entitlements */,
-				92E20F3017EE688B00849A7E /* timerIcon.svg */,
-				92A93EA717EE60DD003FBAA7 /* timer.svg */,
-				92A93E7B17EE57E3003FBAA7 /* TimerBar-Info.plist */,
-				92A93E7C17EE57E3003FBAA7 /* InfoPlist.strings */,
 				92A93E7F17EE57E3003FBAA7 /* main.m */,
 				92A93E8117EE57E3003FBAA7 /* TimerBar-Prefix.pch */,
 				92320A3D17EE9791007F3892 /* defaults.plist */,
+				92A93E7B17EE57E3003FBAA7 /* TimerBar-Info.plist */,
+				92A93EA717EE60DD003FBAA7 /* timer.svg */,
+				92E20F3017EE688B00849A7E /* timerIcon.svg */,
+				92A93E7C17EE57E3003FBAA7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
