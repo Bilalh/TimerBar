@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		921C890217EE83C3003ECB0A /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921C88FF17EE83B3003ECB0A /* ShortcutRecorder.framework */; };
+		921C890C17EE8554003ECB0A /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C890A17EE8554003ECB0A /* PreferencesController.m */; };
+		921C890D17EE8554003ECB0A /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921C890B17EE8554003ECB0A /* PreferencesController.xib */; };
+		921C890E17EE8996003ECB0A /* PTHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921C890117EE83B3003ECB0A /* PTHotKey.framework */; };
+		92320A3E17EE9791007F3892 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92320A3D17EE9791007F3892 /* defaults.plist */; };
 		92A93E7417EE57E3003FBAA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A93E7317EE57E3003FBAA7 /* Cocoa.framework */; };
 		92A93E7E17EE57E3003FBAA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E7C17EE57E3003FBAA7 /* InfoPlist.strings */; };
 		92A93E8017EE57E3003FBAA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E7F17EE57E3003FBAA7 /* main.m */; };
@@ -134,6 +138,10 @@
 		921C88F917EE83B3003ECB0A /* SRRecorderControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
 		921C88FA17EE83B3003ECB0A /* SRValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		921C88FB17EE83B3003ECB0A /* SRValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
+		921C890917EE8554003ECB0A /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		921C890A17EE8554003ECB0A /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		921C890B17EE8554003ECB0A /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
+		92320A3D17EE9791007F3892 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
 		92A93E7017EE57E3003FBAA7 /* TimerBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A93E7317EE57E3003FBAA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92A93E7617EE57E3003FBAA7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -164,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921C890E17EE8996003ECB0A /* PTHotKey.framework in Frameworks */,
 				921C890217EE83C3003ECB0A /* ShortcutRecorder.framework in Frameworks */,
 				92A93E7417EE57E3003FBAA7 /* Cocoa.framework in Frameworks */,
 			);
@@ -278,6 +287,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		921C890317EE84F6003ECB0A /* Prefs */ = {
+			isa = PBXGroup;
+			children = (
+				921C890917EE8554003ECB0A /* PreferencesController.h */,
+				921C890A17EE8554003ECB0A /* PreferencesController.m */,
+				921C890B17EE8554003ECB0A /* PreferencesController.xib */,
+			);
+			path = Prefs;
+			sourceTree = "<group>";
+		};
 		92A93E6717EE57E3003FBAA7 = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +343,7 @@
 		92A93E7917EE57E3003FBAA7 /* TimerBar */ = {
 			isa = PBXGroup;
 			children = (
+				921C890317EE84F6003ECB0A /* Prefs */,
 				92A93E8517EE57E3003FBAA7 /* TimerBarAppDelegate.h */,
 				92A93E8617EE57E3003FBAA7 /* TimerBarAppDelegate.m */,
 				92A93E8817EE57E3003FBAA7 /* MainMenu.xib */,
@@ -342,6 +362,7 @@
 				92A93E7C17EE57E3003FBAA7 /* InfoPlist.strings */,
 				92A93E7F17EE57E3003FBAA7 /* main.m */,
 				92A93E8117EE57E3003FBAA7 /* TimerBar-Prefix.pch */,
+				92320A3D17EE9791007F3892 /* defaults.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -495,7 +516,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921C890D17EE8554003ECB0A /* PreferencesController.xib in Resources */,
 				92A93E7E17EE57E3003FBAA7 /* InfoPlist.strings in Resources */,
+				92320A3E17EE9791007F3892 /* defaults.plist in Resources */,
 				92E20F3417EE7F3F00849A7E /* Credits.html in Resources */,
 				92A93E8C17EE57E3003FBAA7 /* Images.xcassets in Resources */,
 				92A93E8A17EE57E3003FBAA7 /* MainMenu.xib in Resources */,
@@ -517,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921C890C17EE8554003ECB0A /* PreferencesController.m in Sources */,
 				92A93E8717EE57E3003FBAA7 /* TimerBarAppDelegate.m in Sources */,
 				92A93E8017EE57E3003FBAA7 /* main.m in Sources */,
 			);

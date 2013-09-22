@@ -7,6 +7,9 @@
 //
 
 #import "TimerBarAppDelegate.h"
+#import "PreferencesController.h"
+#import <PTHotKey/PTHotKeyCenter.h>
+#import <PTHotKey/PTHotKey+ShortcutRecorder.h>
 
 
 static NSImage *icon;
@@ -22,6 +25,9 @@ static NSImage *icon;
 
 + (void) initialize{
    icon  = [NSImage imageNamed:@"Timer"];
+   [[NSUserDefaults standardUserDefaults] registerDefaults:
+        [NSDictionary dictionaryWithContentsOfFile:
+         [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]]];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -37,11 +43,24 @@ static NSImage *icon;
     [statusItem setMenu:menu];
     on = false;
     
+    [self updateHotkeys];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+        selector:@selector(updateHotkeys:)
+            name:NSUserDefaultsDidChangeNotification
+          object:nil];
+    
 }
+
 
 #pragma mark Actions
 
 - (IBAction)startStop:(id)sender
+{
+    [self startStop];
+}
+
+- (void)startStop
 {
     if (on){
         [timer invalidate];
@@ -58,7 +77,7 @@ static NSImage *icon;
         [timerThread start];
         [self updateTime];
         
-
+        
         [statusItem setImage:Nil];
         [startStopItem setTitle: NSLocalizedString(@"Pause",nil)];
         [endItem setEnabled:YES];
@@ -69,14 +88,22 @@ static NSImage *icon;
 
 - (IBAction)end:(id)sender
 {
+    [self end];
+}
+
+- (void)end
+{
     [timer invalidate];
+    on = false;
     seconds = 0;
     
     [statusItem setTitle:@""];
     [statusItem setImage:icon];
     [endItem setEnabled:NO];
     
+    [startStopItem setTitle: NSLocalizedString(@"Start",nil)];
 }
+
 
 #pragma mark timer
 
@@ -109,6 +136,46 @@ static NSImage *icon;
 }
 
 
+#pragma mark prefs
+
+- (IBAction)preferences:(id)sender {
+    if (self.preferencesController == nil) {
+        PreferencesController* pc = [[PreferencesController alloc]
+                                     initWithWindowNibName:@"PreferencesController"];
+        self.preferencesController = pc;
+    }
+    
+    [self.preferencesController showWindow:nil];
+    [NSApp activateIgnoringOtherApps:YES];
+}
+
+
+- (void)updateHotkeys:(NSNotification*)notification
+{
+    [self updateHotkeys];
+}
+
+- (void)updateHotkeys
+{
+ 
+    void (^updateKeybinding)(NSString*,SEL) = ^(NSString *key,SEL sel){
+        PTHotKeyCenter *hotKeyCenter = [PTHotKeyCenter sharedCenter];
+        PTHotKey *oldHotKey          = [hotKeyCenter hotKeyWithIdentifier:key];
+        [hotKeyCenter unregisterHotKey:oldHotKey];
+        
+        PTHotKey *newHotKey = [PTHotKey hotKeyWithIdentifier:key
+                                                    keyCombo:[[NSUserDefaults standardUserDefaults] valueForKey:key]
+                                                      target:self
+                                                      action:sel];
+        [hotKeyCenter registerHotKey:newHotKey];
+        
+	};
+    
+    updateKeybinding(@"hotkeys.startPause",@selector(startStop));
+    updateKeybinding(@"hotkeys.end",@selector(end));
+
+    
+}
 
 @end
 

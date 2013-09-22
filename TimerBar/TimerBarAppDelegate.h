@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class PreferencesController;
 
 @interface TimerBarAppDelegate : NSObject <NSApplicationDelegate>
 
@@ -23,5 +24,7 @@
 
 @property (retain) NSThread *timerThread;
 @property (retain) NSTimer *timer;
+
+@property (retain) PreferencesController *preferencesController;
 
 @end

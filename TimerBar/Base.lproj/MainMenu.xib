@@ -54,6 +54,12 @@
                         <action selector="orderFrontStandardAboutPanel:" target="-2" id="XHw-dU-NcC"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Preferences" id="InG-rP-Occ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferences:" target="494" id="QPw-WK-W3Y"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit TimerBar" id="loh-JH-bL1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
