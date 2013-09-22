@@ -8,9 +8,9 @@
 
 #import "TimerBarAppDelegate.h"
 #import "PreferencesController.h"
-#import <PTHotKey/PTHotKeyCenter.h>
-#import <PTHotKey/PTKeyCodeTranslator.h>
-#import <PTHotKey/PTHotKey+ShortcutRecorder.h>
+#import "PTHotKey/PTHotKeyCenter.h"
+#import "PTHotKey/PTKeyCodeTranslator.h"
+#import "PTHotKey/PTHotKey+ShortcutRecorder.h"
 
 
 static NSImage *icon;

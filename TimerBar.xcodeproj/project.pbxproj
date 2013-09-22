@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		921C890217EE83C3003ECB0A /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921C88FF17EE83B3003ECB0A /* ShortcutRecorder.framework */; };
 		921C890C17EE8554003ECB0A /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C890A17EE8554003ECB0A /* PreferencesController.m */; };
 		921C890D17EE8554003ECB0A /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921C890B17EE8554003ECB0A /* PreferencesController.xib */; };
-		921C890E17EE8996003ECB0A /* PTHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921C890117EE83B3003ECB0A /* PTHotKey.framework */; };
+		9222EC9817EEAE50009AD32C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E8817EE57E3003FBAA7 /* MainMenu.xib */; };
 		92320A3E17EE9791007F3892 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92320A3D17EE9791007F3892 /* defaults.plist */; };
-		92A93E7417EE57E3003FBAA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A93E7317EE57E3003FBAA7 /* Cocoa.framework */; };
+		92320A4117EEA7D6007F3892 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A93E7317EE57E3003FBAA7 /* Cocoa.framework */; };
+		92320A4217EEA7E1007F3892 /* PTHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921C890117EE83B3003ECB0A /* PTHotKey.framework */; };
+		92320A4317EEA7E1007F3892 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921C88FF17EE83B3003ECB0A /* ShortcutRecorder.framework */; };
+		92320A4717EEA9F6007F3892 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 921C88FF17EE83B3003ECB0A /* ShortcutRecorder.framework */; };
+		92320A4817EEA9F6007F3892 /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 921C890117EE83B3003ECB0A /* PTHotKey.framework */; };
 		92A93E7E17EE57E3003FBAA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E7C17EE57E3003FBAA7 /* InfoPlist.strings */; };
 		92A93E8017EE57E3003FBAA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E7F17EE57E3003FBAA7 /* main.m */; };
 		92A93E8717EE57E3003FBAA7 /* TimerBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E8617EE57E3003FBAA7 /* TimerBarAppDelegate.m */; };
-		92A93E8A17EE57E3003FBAA7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E8817EE57E3003FBAA7 /* MainMenu.xib */; };
 		92A93E8C17EE57E3003FBAA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E8B17EE57E3003FBAA7 /* Images.xcassets */; };
 		92A93E9317EE57E3003FBAA7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A93E9217EE57E3003FBAA7 /* XCTest.framework */; };
 		92A93E9417EE57E3003FBAA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A93E7317EE57E3003FBAA7 /* Cocoa.framework */; };
@@ -48,6 +50,20 @@
 			remoteInfo = TimerBar;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		92320A4617EEA9DA007F3892 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				92320A4717EEA9F6007F3892 /* ShortcutRecorder.framework in CopyFiles */,
+				92320A4817EEA9F6007F3892 /* PTHotKey.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		921C889F17EE83B2003ECB0A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -143,6 +159,7 @@
 		921C890B17EE8554003ECB0A /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
 		92320A3D17EE9791007F3892 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
 		92320A4017EEA696007F3892 /* TimerBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerBar.entitlements; sourceTree = "<group>"; };
+		92320A4A17EEAAE6007F3892 /* fix_libraries_paths.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fix_libraries_paths.sh; sourceTree = "<group>"; };
 		92A93E7017EE57E3003FBAA7 /* TimerBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A93E7317EE57E3003FBAA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92A93E7617EE57E3003FBAA7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -173,9 +190,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				921C890E17EE8996003ECB0A /* PTHotKey.framework in Frameworks */,
-				921C890217EE83C3003ECB0A /* ShortcutRecorder.framework in Frameworks */,
-				92A93E7417EE57E3003FBAA7 /* Cocoa.framework in Frameworks */,
+				92320A4217EEA7E1007F3892 /* PTHotKey.framework in Frameworks */,
+				92320A4317EEA7E1007F3892 /* ShortcutRecorder.framework in Frameworks */,
+				92320A4117EEA7D6007F3892 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +315,14 @@
 			path = Prefs;
 			sourceTree = "<group>";
 		};
+		92320A4917EEAAB4007F3892 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				92320A4A17EEAAE6007F3892 /* fix_libraries_paths.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		92A93E6717EE57E3003FBAA7 = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +333,7 @@
 				92E20F3117EE7BA700849A7E /* LICENCE */,
 				92E20F3217EE7C3300849A7E /* README.md */,
 				92E20F3317EE7F3700849A7E /* Credits.html */,
+				92320A4917EEAAB4007F3892 /* Scripts */,
 				92E20F3617EE81D900849A7E /* Vendor */,
 			);
 			sourceTree = "<group>";
@@ -344,7 +370,6 @@
 		92A93E7917EE57E3003FBAA7 /* TimerBar */ = {
 			isa = PBXGroup;
 			children = (
-				92320A4017EEA696007F3892 /* TimerBar.entitlements */,
 				921C890317EE84F6003ECB0A /* Prefs */,
 				92A93E8517EE57E3003FBAA7 /* TimerBarAppDelegate.h */,
 				92A93E8617EE57E3003FBAA7 /* TimerBarAppDelegate.m */,
@@ -358,6 +383,7 @@
 		92A93E7A17EE57E3003FBAA7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92320A4017EEA696007F3892 /* TimerBar.entitlements */,
 				92E20F3017EE688B00849A7E /* timerIcon.svg */,
 				92A93EA717EE60DD003FBAA7 /* timer.svg */,
 				92A93E7B17EE57E3003FBAA7 /* TimerBar-Info.plist */,
@@ -405,6 +431,8 @@
 				92A93E6C17EE57E3003FBAA7 /* Sources */,
 				92A93E6D17EE57E3003FBAA7 /* Frameworks */,
 				92A93E6E17EE57E3003FBAA7 /* Resources */,
+				92320A4617EEA9DA007F3892 /* CopyFiles */,
+				9222EC9917EEB0C2009AD32C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -525,12 +553,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9222EC9817EEAE50009AD32C /* MainMenu.xib in Resources */,
 				921C890D17EE8554003ECB0A /* PreferencesController.xib in Resources */,
 				92A93E7E17EE57E3003FBAA7 /* InfoPlist.strings in Resources */,
 				92320A3E17EE9791007F3892 /* defaults.plist in Resources */,
 				92E20F3417EE7F3F00849A7E /* Credits.html in Resources */,
 				92A93E8C17EE57E3003FBAA7 /* Images.xcassets in Resources */,
-				92A93E8A17EE57E3003FBAA7 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +571,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9222EC9917EEB0C2009AD32C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PROJECT_DIR/scripts/fix_libraries_paths.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92A93E6C17EE57E3003FBAA7 /* Sources */ = {

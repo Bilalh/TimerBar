@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Bilal Syed Hussain. All rights reserved.
 //
 
-#import <ShortcutRecorder/ShortcutRecorder.h>
+#import "ShortcutRecorder/ShortcutRecorder.h"
 
 @interface PreferencesController : NSWindowController <SRRecorderControlDelegate>
 {
