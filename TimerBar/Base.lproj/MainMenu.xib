@@ -50,6 +50,9 @@
                 </menuItem>
                 <menuItem title="About TimerBar" id="IRs-9U-KIA">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="orderFrontStandardAboutPanel:" target="-2" id="XHw-dU-NcC"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Quit TimerBar" id="loh-JH-bL1">
                     <modifierMask key="keyEquivalentModifierMask"/>

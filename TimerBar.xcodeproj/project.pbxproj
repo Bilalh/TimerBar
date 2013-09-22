@@ -17,6 +17,7 @@
 		92A93E9417EE57E3003FBAA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A93E7317EE57E3003FBAA7 /* Cocoa.framework */; };
 		92A93E9C17EE57E3003FBAA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E9A17EE57E3003FBAA7 /* InfoPlist.strings */; };
 		92A93E9E17EE57E3003FBAA7 /* TimerBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E9D17EE57E3003FBAA7 /* TimerBarTests.m */; };
+		92E20F3417EE7F3F00849A7E /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 92E20F3317EE7F3700849A7E /* Credits.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		92E20F3017EE688B00849A7E /* timerIcon.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = timerIcon.svg; sourceTree = "<group>"; };
 		92E20F3117EE7BA700849A7E /* LICENCE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
 		92E20F3217EE7C3300849A7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		92E20F3317EE7F3700849A7E /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				92A93E7117EE57E3003FBAA7 /* Products */,
 				92E20F3117EE7BA700849A7E /* LICENCE */,
 				92E20F3217EE7C3300849A7E /* README.md */,
+				92E20F3317EE7F3700849A7E /* Credits.html */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A93E7E17EE57E3003FBAA7 /* InfoPlist.strings in Resources */,
+				92E20F3417EE7F3F00849A7E /* Credits.html in Resources */,
 				92A93E8C17EE57E3003FBAA7 /* Images.xcassets in Resources */,
 				92A93E8A17EE57E3003FBAA7 /* MainMenu.xib in Resources */,
 			);
