@@ -84,7 +84,7 @@ class AppCast
 		@appcast_download_url  = "#{@download_base_url}#{@appcast_xml_name}"
 		@download_url          = 
 			if @config['github_hosted_downloads'] &&  @config['github_username']  then
-				"https://github.com/downloads/#{@config['github_username'] }/#{@proj_name}/#{@archive_filename}"
+                "https://github.com/#{@config['github_username']}/#{@proj_name}/releases/download/#{@version}/#{@archive_filename}"
 			else
 				"#{@download_base_url}#{@archive_filename}"
 			end
