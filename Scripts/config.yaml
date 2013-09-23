@@ -1,7 +1,7 @@
 ---
 build_now:               'YES'  
 download_base_url:       'http://bilalh.github.com/sparkle/timerbar/'
-appcast_basefolder:      '/Users/bilalh/Projects/Release/TimeBar/'
+appcast_basefolder:      '/Users/bilalh/Projects/Release/TimerBar/'
 appcast_xml_name:        'appcast.xml'  
 keychain_privkey_name:   'Sparkle Private Key'  
 css_file_name:           'rnotes.css'
