@@ -39,6 +39,7 @@
 		92A93E9417EE57E3003FBAA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A93E7317EE57E3003FBAA7 /* Cocoa.framework */; };
 		92A93E9C17EE57E3003FBAA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E9A17EE57E3003FBAA7 /* InfoPlist.strings */; };
 		92A93E9E17EE57E3003FBAA7 /* TimerBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E9D17EE57E3003FBAA7 /* TimerBarTests.m */; };
+		92B5494D17EFD91E00113772 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9289C27117EFD66F00323DE4 /* dsa_pub.pem */; };
 		92E20F3417EE7F3F00849A7E /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 92E20F3317EE7F3700849A7E /* Credits.html */; };
 /* End PBXBuildFile section */
 
@@ -584,6 +585,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B5494D17EFD91E00113772 /* dsa_pub.pem in Resources */,
 				9222EC9817EEAE50009AD32C /* MainMenu.xib in Resources */,
 				921C890D17EE8554003ECB0A /* PreferencesController.xib in Resources */,
 				92A93E7E17EE57E3003FBAA7 /* InfoPlist.strings in Resources */,
@@ -888,6 +890,7 @@
 				9289C26B17EFD54F00323DE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92A93E6B17EE57E3003FBAA7 /* Build configuration list for PBXProject "TimerBar" */ = {
 			isa = XCConfigurationList;
