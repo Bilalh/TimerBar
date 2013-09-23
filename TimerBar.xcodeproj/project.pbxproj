@@ -160,6 +160,7 @@
 		92320A3D17EE9791007F3892 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.bplist; path = defaults.plist; sourceTree = "<group>"; };
 		92320A4017EEA696007F3892 /* TimerBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerBar.entitlements; sourceTree = "<group>"; };
 		92320A4A17EEAAE6007F3892 /* fix_libraries_paths.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fix_libraries_paths.sh; sourceTree = "<group>"; };
+		9289C26517EFD42200323DE4 /* Changelog.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
 		92A93E7017EE57E3003FBAA7 /* TimerBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A93E7317EE57E3003FBAA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92A93E7617EE57E3003FBAA7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -332,6 +333,7 @@
 				92A93E7117EE57E3003FBAA7 /* Products */,
 				92E20F3117EE7BA700849A7E /* LICENCE */,
 				92E20F3217EE7C3300849A7E /* README.md */,
+				9289C26517EFD42200323DE4 /* Changelog.md */,
 				92E20F3317EE7F3700849A7E /* Credits.html */,
 				92320A4917EEAAB4007F3892 /* Scripts */,
 				92E20F3617EE81D900849A7E /* Vendor */,
