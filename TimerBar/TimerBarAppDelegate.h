@@ -27,4 +27,6 @@
 
 @property (retain) PreferencesController *preferencesController;
 
+@property (retain) NSMutableSet *events;
+
 @end

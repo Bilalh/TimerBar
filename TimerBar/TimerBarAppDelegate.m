@@ -19,7 +19,7 @@ static NSImage *icon;
 @synthesize window, statusItem, menu;
 @synthesize seconds, on;
 @synthesize startStopItem, endItem;
-@synthesize timerThread,timer;
+@synthesize timerThread,timer,events;
 
 
 #pragma mark Init
@@ -52,6 +52,8 @@ static NSImage *icon;
             name:NSUserDefaultsDidChangeNotification
           object:nil];
     
+    self.events = [NSMutableSet new];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:(id)self];
 }
 
 
@@ -107,6 +109,53 @@ static NSImage *icon;
 }
 
 
+- (IBAction)addNotification:(id)sender
+{
+    [self addEvent:@"Added Notification when? (HH:MM:SS)"];
+}
+
+- (IBAction)clearNotifications:(id)sender
+{
+    [events removeAllObjects];
+}
+
+- (void)addEvent: (NSString *)prompt{
+    NSAlert *alert = [NSAlert alertWithMessageText: prompt
+                                     defaultButton:@"Add"
+                                   alternateButton:@"Cancel"
+                                       otherButton:nil
+                         informativeTextWithFormat:@""];
+    
+    NSDatePicker* datePickerControl = [[NSDatePicker alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)];
+	[datePickerControl setDatePickerElements: NSHourMinuteSecondDatePickerElementFlag];
+    
+    [alert setAccessoryView:datePickerControl];
+    NSInteger button = [alert runModal];
+    if (button == NSAlertDefaultReturn) {
+
+    
+        NSDate *d = [datePickerControl dateValue];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *dc = [calendar
+                                components:NSMinuteCalendarUnit|NSHourCalendarUnit|NSSecondCalendarUnit
+                                  fromDate:d];
+        NSInteger event = dc.hour * 3600 + dc.minute * 60 +  dc.second;
+        if (event > 0){
+            [events addObject:@(event)];
+        }
+        
+        
+    } else if (button == NSAlertAlternateReturn) {
+        
+    } else {
+        NSAssert1(NO, @"Invalid input dialog button %d", button);
+    }
+}
+
+
+
+
+
 #pragma mark timer
 
 - (void)startTimer
@@ -133,10 +182,37 @@ static NSImage *icon;
 
 - (void)tick
 {
+    if ([events containsObject:@(seconds)]){
+        [self showNotificationWithTime:seconds];
+    }
+    
     self.seconds++;
     [self updateTime];
 }
 
+- (void)showNotificationWithTime:(NSInteger)secs
+{
+    NSUserNotification *userNotification = [NSUserNotification new];
+    userNotification.title = [NSString stringWithFormat:@"%@", [self stringFromSeconds:secs]];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:userNotification];
+    
+}
+
+- (NSString *)stringFromSeconds:(NSInteger)oseconds
+{
+	if (oseconds<60){
+		return([NSString stringWithFormat:@"%zd seconds",oseconds]);
+    }
+    NSInteger minutes = oseconds / 60;
+    if (minutes < 60){
+        NSInteger scs = oseconds % 60;
+        return([NSString stringWithFormat:@"%zd:%02zd minutes",minutes,scs]);
+    }
+    NSInteger hours = minutes / 60;
+    minutes = hours % 60;
+    NSInteger scs = minutes % 60;
+    return([NSString stringWithFormat:@"%zd:%02zd:%02zd hours",hours,minutes,scs]);
+}
 
 #pragma mark prefs
 
@@ -181,6 +257,14 @@ static NSImage *icon;
     updateKeybinding(@"hotkeys.startPause",@selector(startStop),startStopItem);
     updateKeybinding(@"hotkeys.end",@selector(end),endItem);
 
+}
+
+#pragma mark  NSUserNotificationCenterDelegate
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
+     shouldPresentNotification:(NSUserNotification *)notification
+{
+    return YES;
 }
 
 @end
