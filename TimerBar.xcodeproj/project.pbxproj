@@ -31,6 +31,7 @@
 		92320A4317EEA7E1007F3892 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921C88FF17EE83B3003ECB0A /* ShortcutRecorder.framework */; };
 		92320A4717EEA9F6007F3892 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 921C88FF17EE83B3003ECB0A /* ShortcutRecorder.framework */; };
 		92320A4817EEA9F6007F3892 /* PTHotKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 921C890117EE83B3003ECB0A /* PTHotKey.framework */; };
+		92A169C017EFDB0600491DCC /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92B5494E17EFDA5000113772 /* Sparkle.framework */; };
 		92A93E7E17EE57E3003FBAA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E7C17EE57E3003FBAA7 /* InfoPlist.strings */; };
 		92A93E8017EE57E3003FBAA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E7F17EE57E3003FBAA7 /* main.m */; };
 		92A93E8717EE57E3003FBAA7 /* TimerBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E8617EE57E3003FBAA7 /* TimerBarAppDelegate.m */; };
@@ -40,6 +41,7 @@
 		92A93E9C17EE57E3003FBAA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92A93E9A17EE57E3003FBAA7 /* InfoPlist.strings */; };
 		92A93E9E17EE57E3003FBAA7 /* TimerBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A93E9D17EE57E3003FBAA7 /* TimerBarTests.m */; };
 		92B5494D17EFD91E00113772 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9289C27117EFD66F00323DE4 /* dsa_pub.pem */; };
+		92B5494F17EFDA5000113772 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B5494E17EFDA5000113772 /* Sparkle.framework */; };
 		92E20F3417EE7F3F00849A7E /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 92E20F3317EE7F3700849A7E /* Credits.html */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				92A169C017EFDB0600491DCC /* Sparkle.framework in CopyFiles */,
 				92320A4717EEA9F6007F3892 /* ShortcutRecorder.framework in CopyFiles */,
 				92320A4817EEA9F6007F3892 /* PTHotKey.framework in CopyFiles */,
 			);
@@ -206,6 +209,7 @@
 		92A93E9B17EE57E3003FBAA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92A93E9D17EE57E3003FBAA7 /* TimerBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerBarTests.m; sourceTree = "<group>"; };
 		92A93EA717EE60DD003FBAA7 /* timer.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = timer.svg; sourceTree = "<group>"; };
+		92B5494E17EFDA5000113772 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		92E20F3017EE688B00849A7E /* timerIcon.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = timerIcon.svg; sourceTree = "<group>"; };
 		92E20F3117EE7BA700849A7E /* LICENCE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
 		92E20F3217EE7C3300849A7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				92320A4217EEA7E1007F3892 /* PTHotKey.framework in Frameworks */,
 				92320A4317EEA7E1007F3892 /* ShortcutRecorder.framework in Frameworks */,
 				92320A4117EEA7D6007F3892 /* Cocoa.framework in Frameworks */,
+				92B5494F17EFDA5000113772 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,11 +386,12 @@
 		92A93E7217EE57E3003FBAA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92B5494E17EFDA5000113772 /* Sparkle.framework */,
 				92A93E7317EE57E3003FBAA7 /* Cocoa.framework */,
 				92A93E9217EE57E3003FBAA7 /* XCTest.framework */,
 				92A93E7517EE57E3003FBAA7 /* Other Frameworks */,
 			);
-			name = Frameworks;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		92A93E7517EE57E3003FBAA7 /* Other Frameworks */ = {
@@ -817,6 +823,10 @@
 				CODE_SIGN_ENTITLEMENTS = TimerBar/TimerBar.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/bilalh/Projects/TimerBar/Frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TimerBar/TimerBar-Prefix.pch";
 				INFOPLIST_FILE = "TimerBar/TimerBar-Info.plist";
@@ -832,6 +842,10 @@
 				CODE_SIGN_ENTITLEMENTS = TimerBar/TimerBar.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/bilalh/Projects/TimerBar/Frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TimerBar/TimerBar-Prefix.pch";
 				INFOPLIST_FILE = "TimerBar/TimerBar-Info.plist";
