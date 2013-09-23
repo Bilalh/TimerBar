@@ -148,7 +148,7 @@ static NSImage *icon;
     } else if (button == NSAlertAlternateReturn) {
         
     } else {
-        NSAssert1(NO, @"Invalid input dialog button %d", button);
+        NSAssert1(NO, @"Invalid input dialog button %zd", button);
     }
 }
 

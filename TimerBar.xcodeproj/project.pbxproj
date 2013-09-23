@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		9289C26817EFD54F00323DE4 /* Sparkle */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9289C26917EFD54F00323DE4 /* Build configuration list for PBXAggregateTarget "Sparkle" */;
+			buildPhases = (
+				9289C26F17EFD59E00323DE4 /* Run Script */,
+			);
+			dependencies = (
+				9289C26E17EFD59500323DE4 /* PBXTargetDependency */,
+			);
+			name = Sparkle;
+			productName = Sparkle;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		921C890C17EE8554003ECB0A /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C890A17EE8554003ECB0A /* PreferencesController.m */; };
 		921C890D17EE8554003ECB0A /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921C890B17EE8554003ECB0A /* PreferencesController.xib */; };
@@ -41,6 +56,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = E273122E1349EC9000A84433;
 			remoteInfo = PTHotKey.framework;
+		};
+		9289C26D17EFD59500323DE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92A93E6817EE57E3003FBAA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92A93E6F17EE57E3003FBAA7;
+			remoteInfo = TimerBar;
 		};
 		92A93E9517EE57E3003FBAA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -161,6 +183,9 @@
 		92320A4017EEA696007F3892 /* TimerBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerBar.entitlements; sourceTree = "<group>"; };
 		92320A4A17EEAAE6007F3892 /* fix_libraries_paths.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fix_libraries_paths.sh; sourceTree = "<group>"; };
 		9289C26517EFD42200323DE4 /* Changelog.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
+		9289C26C17EFD57500323DE4 /* appcast_automation.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = appcast_automation.rb; sourceTree = "<group>"; };
+		9289C27017EFD63F00323DE4 /* config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.yaml; sourceTree = "<group>"; };
+		9289C27117EFD66F00323DE4 /* dsa_pub.pem */ = {isa = PBXFileReference; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		92A93E7017EE57E3003FBAA7 /* TimerBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A93E7317EE57E3003FBAA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92A93E7617EE57E3003FBAA7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -319,6 +344,9 @@
 		92320A4917EEAAB4007F3892 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				9289C27117EFD66F00323DE4 /* dsa_pub.pem */,
+				9289C27017EFD63F00323DE4 /* config.yaml */,
+				9289C26C17EFD57500323DE4 /* appcast_automation.rb */,
 				92320A4A17EEAAE6007F3892 /* fix_libraries_paths.sh */,
 			);
 			path = Scripts;
@@ -529,6 +557,7 @@
 			targets = (
 				92A93E6F17EE57E3003FBAA7 /* TimerBar */,
 				92A93E9017EE57E3003FBAA7 /* TimerBarTests */,
+				9289C26817EFD54F00323DE4 /* Sparkle */,
 			);
 		};
 /* End PBXProject section */
@@ -588,6 +617,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PROJECT_DIR/scripts/fix_libraries_paths.sh\"";
 		};
+		9289C26F17EFD59E00323DE4 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PROJECT_DIR/scripts/appcast_automation.rb\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -612,6 +655,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9289C26E17EFD59500323DE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92A93E6F17EE57E3003FBAA7 /* TimerBar */;
+			targetProxy = 9289C26D17EFD59500323DE4 /* PBXContainerItemProxy */;
+		};
 		92A93E9617EE57E3003FBAA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 92A93E6F17EE57E3003FBAA7 /* TimerBar */;
@@ -678,6 +726,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9289C26A17EFD54F00323DE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9289C26B17EFD54F00323DE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		92A93E9F17EE57E3003FBAA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -819,6 +881,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9289C26917EFD54F00323DE4 /* Build configuration list for PBXAggregateTarget "Sparkle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9289C26A17EFD54F00323DE4 /* Debug */,
+				9289C26B17EFD54F00323DE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		92A93E6B17EE57E3003FBAA7 /* Build configuration list for PBXProject "TimerBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
